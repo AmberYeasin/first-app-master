@@ -1,0 +1,161 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*** Tags ***/
+a {
+  color: #BE1E2D;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #DD263D;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #FF2C46;
+  text-decoration: underline;
+}
+
+td a:hover, td a:active {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td {
+  width: 14.25%;
+  height: 100px;
+  font-family: "MS Serif", "New York", serif;
+  font-size: 24pt;
+  color: #C7C8CA;
+  text-align: center;
+  vertical-align: middle;
+}
+
+table th {
+  border-bottom: 1px solid black;
+  width: 14.25%;
+  height: 40px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+td:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+/*** IDs ***/
+#left-icon {
+  margin-right: 40px;
+  text-align: right;
+}
+
+#right-icon {
+  margin-left: 40px;
+  text-align: left;
+}
+
+#container {
+  margin: 0px auto;
+  padding: 0px;
+  width: 50%;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 18pt;
+  color: #000;
+  background-color: #FFF;
+}
+
+#content {
+  width: 100%;
+}
+
+#main-content {
+  width: 100%;
+  float: left;
+}
+
+#view-menu {
+  width: 100%;
+  height: 60px;
+}
+
+#selected-menu {
+  padding: 15px;
+  width: 100%;
+  height: 60px;
+}
+
+#calendar {
+  padding-top: 40px;
+  width: 100%;
+}
+
+#selected {
+  width: 100%;
+  line-height: 60px;
+  font-size: 24pt;
+  text-align: center;
+  vertical-align: middle;
+  float: left;
+}
+
+/*** Classes ***/
+.dead-icon {
+  color: #C7C8CA !important;
+}
+
+.view-item {
+  width: 50%;
+  line-height: 60px;
+  text-align: center;
+  vertical-align: middle;
+  float: left;
+}
+
+.invert-colors {
+  color: #ffffff;
+  background-color: #BE1E2D;
+}
+
+.white-text {
+  color: white;
+}
+
+.current-day {
+  background-color: #ffb8b8;
+}
+
+.inaccessible {
+  color: #C7C8CA;
+}
+
+/* Clearfix solution from http://stackoverflow.com/questions/8554043/what-is-clearfix */
+.clearfix:after {
+  content: " "; /* Older browser do not support empty content */
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+/*** Responsive @media queries ***/
+@media screen and (max-width: 1000px) {
+  #container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  table td {
+    font-size: 16pt;
+  }
+
+  table th {
+    font-size: 10pt;
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>2016-2017 Academic Calendar</title>
+</head>
+
+<body>
+
+<div id="container">
+  <div id="content" class="clearfix">
+    <div id="main-content" class="clearfix">
+      <!-- Displays all possible views accessible from current view. -->
+      <div id="view-menu" class="clearfix">
+        <div class="view-item"><a [routerLink]="['/year']">Year</a></div>
+        <div class="view-item"><a [routerLink]="['/month/' + currentMonth]">Month</a></div>
+        <div class="view-item"><a [routerLink]="['/week/' + currentMonth + '/' + currentDay]">Week</a></div>
+      </div>
+
+      <!-- Displays current selection (e.g. exact month, week, or date) and next/prev interface. -->
+      <div id="selected-menu" class="clearfix">
+        <div id="selected">
+          <a *ngIf="!atFirstDay" [routerLink]="getPreviousDay()"><span class="glyphicon glyphicon-chevron-left"
+                                                                       id="left-icon"></span></a>
+          {{currentMonth}} {{currentDay}}, {{thisMonthsYear()}}
+          <a *ngIf="!atLastDay" [routerLink]="getNextDay()"><span class="glyphicon glyphicon-chevron-right"
+                                                                  id="right-icon"></span></a>
+        </div>
+      </div>
+
+      <!-- Displays calendar info (table) for chosen selection. -->
+      <div id="calendar" class="clearfix">
+        <p>Details for today</p>
+        <div id="details-interface">
+          <ul class="list-group">
+            <li class="list-group-item clearfix" *ngFor="let detail of dayDetails; let i = index">{{detail}}<span
+              class="glyphicon glyphicon-remove-circle kill" (click)="removeDetail(currentMonth, currentDay, i)"></span>
+            </li>
+          </ul>
+          <form [formGroup]="addForm" (ngSubmit)="onAddDetail(currentMonth, currentDay, inputDetail.value)">
+            <div class="form-group row">
+              <div class="text-box">
+                <input type="text"
+                       required
+                       class="form-control"
+                       formControlName="userDetail"
+                       #inputDetail
+                >
+              </div>
+              <div class="btn-box">
+                <button
+                  type="submit"
+                  class="btn btn-danger"
+                >+
+                </button>
+              </div>
+            </div>
+          </form>
+            <button class="btn btn-danger" [ngClass]="{'disabled':isThisDayCurrent()}" (click)="makeTodayCurrent()">Mark
+              this day as the current day
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+

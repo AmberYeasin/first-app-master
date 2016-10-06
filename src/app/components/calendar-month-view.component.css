@@ -1,0 +1,186 @@
+/*** Tags ***/
+
+table { /*https://www.w3.org/Style/Examples/007/center.en.html*/
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 0%);
+  border: none !important;
+  font-family: "MS Serif", "New York", serif;
+}
+
+table td {
+  font-size: 24pt;
+  color: #BE1E2D;
+}
+
+table th {
+  font-size: 18pt;
+}
+
+.table>tbody {
+  border: none;
+}
+
+.table>tbody>tr>td {
+  width: 12.5%;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #C7C8CA;
+}
+
+.table>tbody>tr>th {
+  width: 12.5%;
+  text-align: center;
+  vertical-align: middle;
+  border: none;
+}
+
+td:hover, th.cal-week-heading:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+td.cal-day-outside-month:hover {
+  background-color: white;
+  cursor: default;
+}
+
+th.cal-day-heading {
+  border-left: 1px solid #C7C8CA !important;
+}
+
+th.cal-week-heading {
+  border-top: 1px solid #C7C8CA !important;
+  color: #BE1E2D;
+}
+
+a {
+  color: #BE1E2D;
+}
+
+a:hover {
+	color: #DD263D;
+	text-decoration: underline;
+}
+
+a:active {
+	color: #FF2C46;
+	text-decoration: underline;
+}
+
+/*** IDs ***/
+
+#left-icon {
+  margin-right: 80px;
+  text-align: right;
+}
+
+#right-icon {
+  margin-left: 80px;
+  text-align: left;
+}
+
+#month-title-heading {
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 24pt;
+}
+
+#month-title-heading h1 {
+  display: inline;
+}
+
+/*** Classes ***/
+
+.dead-icon {
+  color: #C7C8CA !important;
+}
+
+.cal-day-outside-month {
+  color: #C7C8CA !important;
+}
+
+.invert-colors {
+  color: #ffffff;
+  background-color: #BE1E2D;
+}
+
+.current-day {
+  background-color: #ffb8b8;
+}
+
+.white-text {
+  color: white;
+}
+
+.table.no-top-border tr td, .table.no-top-border tr th { /*https://codepen.io/netsi1964/pen/ogVQqG*/
+  border-top-width: 0;
+}
+
+/*** Responsive @media queries ***/
+
+@media screen and (min-width: 1000px) {
+  table {
+    width: 75%;
+  }
+
+  /*http://www.w3schools.com/cssref/tryit.asp?filename=trycss3_media_example1*/
+  td {
+    height: 100px;
+  }
+
+  .cal-day-heading {
+    height: 70px;
+    text-align: center;
+    padding-top: 25px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  table td {
+    font-size: 16pt;
+  }
+
+  table th.cal-day-heading {
+    font-size: 10pt;
+  }
+
+  table tr:nth-child(3) th:first-child {
+    display: none;
+  }
+
+  th.cal-day-heading {
+    width: 14.2%;
+  }
+
+  th.cal-week-heading {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  #left-icon {
+    margin-right: 20px;
+    text-align: right;
+  }
+
+  #right-icon {
+    margin-left: 20px;
+    text-align: left;
+  }
+
+  #month-title-heading {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 412px) {
+  table {
+    top: 150px;
+  }
+}
+
